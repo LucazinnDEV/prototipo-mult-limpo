@@ -52,33 +52,35 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <OrderPage
-        products={products}
-        cartItems={cartItems}
-        onAdd={addToCart}
-      />
-
-      {totalItems > 0 && (
-        <Cart
-          totalItems={totalItems}
-          totalPrice={totalPrice}
-          onOpen={() => setModalOpen(true)}
-        />
-      )}
-
-      {modalOpen && (
-        <CartModal
+    <div className="min-h-screen bg-gray-950 text-white">
+      <div className="max-w-md mx-auto min-h-screen bg-gray-900 relative">
+        <OrderPage
           products={products}
           cartItems={cartItems}
-          totalPrice={totalPrice}
           onAdd={addToCart}
-          onRemove={removeFromCart}
-          onClear={handleClear}
-          onFinish={goToCheckout}
-          onClose={() => setModalOpen(false)}
         />
-      )}
+
+        {totalItems > 0 && (
+          <Cart
+            totalItems={totalItems}
+            totalPrice={totalPrice}
+            onOpen={() => setModalOpen(true)}
+          />
+        )}
+
+        {modalOpen && (
+          <CartModal
+            products={products}
+            cartItems={cartItems}
+            totalPrice={totalPrice}
+            onAdd={addToCart}
+            onRemove={removeFromCart}
+            onClear={handleClear}
+            onFinish={goToCheckout}
+            onClose={() => setModalOpen(false)}
+          />
+        )}
+      </div>
     </div>
   )
 }

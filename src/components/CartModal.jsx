@@ -11,7 +11,7 @@ export default function CartModal({
     <div className="fixed inset-0 z-30 flex flex-col justify-end">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
 
-      <div className="relative bg-gray-900 rounded-t-2xl border-t border-gray-700 flex flex-col max-h-[85vh]">
+      <div className="relative bg-gray-900 rounded-t-2xl border-t border-gray-700 flex flex-col max-h-[85vh] w-full max-w-md mx-auto">
         {/* Handle */}
         <div className="flex justify-center pt-3 pb-1">
           <div className="w-10 h-1 bg-gray-600 rounded-full" />

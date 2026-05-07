@@ -23,7 +23,8 @@ export default function CheckoutPage({ cartItems, totalPrice, onConfirm, onBack 
   const canConfirm = payment !== '' && (payment !== 'dinheiro' || cashValue >= totalPrice)
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col">
+    <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center">
+      <div className="w-full max-w-md bg-gray-900 min-h-screen flex flex-col">
       {/* Header */}
       <header className="bg-gray-950 border-b border-gray-700 px-4 py-3 flex items-center gap-3 sticky top-0 z-10">
         <button
@@ -143,7 +144,7 @@ export default function CheckoutPage({ cartItems, totalPrice, onConfirm, onBack 
       </div>
 
       {/* Botão confirmar fixo */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-gray-950 border-t border-gray-700">
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md p-4 bg-gray-950 border-t border-gray-700">
         <button
           onClick={() => canConfirm && onConfirm({ customerName, payment, change: Math.max(change, 0) })}
           disabled={!canConfirm}
@@ -155,6 +156,7 @@ export default function CheckoutPage({ cartItems, totalPrice, onConfirm, onBack 
         >
           ✅ Confirmar Pedido
         </button>
+      </div>
       </div>
     </div>
   )

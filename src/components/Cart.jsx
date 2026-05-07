@@ -1,6 +1,6 @@
 export default function Cart({ totalItems, totalPrice, onOpen }) {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-20 p-3 bg-gray-950 border-t border-gray-700">
+    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md z-20 p-3 bg-gray-950 border-t border-gray-700">
       <button
         onClick={onOpen}
         className="w-full bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white rounded-xl py-4 px-5 flex items-center justify-between transition-colors shadow-lg"
